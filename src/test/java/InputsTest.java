@@ -1,15 +1,15 @@
 import Pages.InputsPage;
 import Pages.SetUP.SetUpsForTests;
 import io.qameta.allure.Description;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
 public class InputsTest extends SetUpsForTests {
     private InputsPage inputsPage;
 
-    @BeforeClass
+    @BeforeEach
     public void setUp() {
         driver.get("https://the-internet.herokuapp.com/inputs");
         inputsPage = new InputsPage(driver);

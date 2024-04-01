@@ -1,22 +1,35 @@
 import Pages.CheckboxesPage;
 import Pages.SetUP.SetUpsForTests;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CheckboxesTest extends SetUpsForTests {
     private CheckboxesPage checkboxesPage;
-
-    @BeforeClass
+    @BeforeEach
     public void setUp() {
         driver.get("https://the-internet.herokuapp.com/checkboxes");
         checkboxesPage = new CheckboxesPage(driver);
     }
 
-    @Test
-    public void testCheckboxes() {
-        checkboxesPage.clickCheckbox(0);
-        System.out.println("Первый чекбокс: " + checkboxesPage.isCheckboxSelected(0));
-        checkboxesPage.clickCheckbox(1);
-        System.out.println("Второй чекбокс: " + checkboxesPage.isCheckboxSelected(1));
+    @ParameterizedTest
+    @ValueSource(ints = {0, 1}) // Здесь можно изменить порядок индексов для изменения порядка нажатий
+    public void testCheckboxes(int index) {
+        // Проверяем начальное состояние чекбокса
+        boolean initialState = checkboxesPage.isCheckboxSelected(index);
+
+        // Нажимаем на чекбокс
+        checkboxesPage.clickCheckbox(index);
+
+        // Проверяем, что состояние чекбокса изменилось
+        if (initialState) {
+            assertFalse(checkboxesPage.isCheckboxSelected(index), "Чекбокс с индексом " + index + " должен был быть снят, но остался выбранным.");
+        } else {
+            assertTrue(checkboxesPage.isCheckboxSelected(index), "Чекбокс с индексом " + index + " должен был быть выбран, но остался не выбранным.");
+        }
     }
 }

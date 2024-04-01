@@ -1,42 +1,40 @@
 import Pages.DisappearingElementsPage;
 import Pages.SetUP.SetUpsForTests;
 import io.qameta.allure.Description;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.TestInfo;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DisappearingElementsTest extends SetUpsForTests {
     private DisappearingElementsPage disappearingElementsPage;
 
-    @BeforeClass
+    @BeforeEach
     public void setUp() {
         driver.get("https://the-internet.herokuapp.com/disappearing_elements");
         disappearingElementsPage = new DisappearingElementsPage(driver);
     }
 
-    @Test
+    @RepeatedTest(10)
     @Description("Проверка исчезающих элементов")
-    public void testDisappearingElements() {
-        int attempts = 0;
-        boolean found = false;
-        while (attempts < 10 && !found) {
-            List<WebElement> elements = disappearingElementsPage.getElements();
-            for (WebElement element : elements) {
-                if (element.getText().equals("Gallery")) {
-                    System.out.println("Пятый элемент найден: " + element.getText());
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
-                disappearingElementsPage.refreshPage();
-                attempts++;
-            }
-        }
+    public void testDisappearingElements(TestInfo testInfo) {
+        System.out.println("Попытка номер: " + testInfo.getDisplayName());
+        List<WebElement> elements = disappearingElementsPage.getElements();
+        // Проверяем, что на странице 5 элементов
+        assertEquals(5, elements.size(), "Количество элементов на странице не соответствует ожидаемому");
+
+        boolean found = elements.stream().anyMatch(element -> element.getText().equals("Gallery"));
+        assertTrue(found, "Элемент 'Gallery' не найден");
+
         if (!found) {
-            System.out.println("Не удалось найти элемент 'Gallery' за 10 попыток");
+            disappearingElementsPage.refreshPage();
+        } else {
+            System.out.println("Элемент 'Gallery' успешно найден.");
         }
     }
 }

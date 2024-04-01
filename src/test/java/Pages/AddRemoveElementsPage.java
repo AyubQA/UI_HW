@@ -1,39 +1,41 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class AddRemoveElementsPage {
-    private final WebDriver driver;
-    private By addButton = By.xpath("//button[text()='Add Element']");
-    private By deleteButtons = By.className("added-manually");
+
+    private WebDriver driver;
+
+    @FindBy(xpath = "//button[text()='Add Element']")
+    private WebElement addButton;
+
+    @FindBy(className = "added-manually")
+    private List<WebElement> deleteButtons;
 
     public AddRemoveElementsPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void addElement() {
-        driver.findElement(addButton).click();
+        addButton.click();
     }
 
     public void removeElement(int index) {
-        List<WebElement> buttons = driver.findElements(deleteButtons);
-        if (index < buttons.size()) {
-            buttons.get(index).click();
+        if (index < deleteButtons.size()) {
+            deleteButtons.get(index).click();
         }
     }
 
     public int getNumberOfDeleteButtons() {
-        return driver.findElements(deleteButtons).size();
+        return deleteButtons.size();
     }
 
     public String getTextOfDeleteButton(int index) {
-        List<WebElement> buttons = driver.findElements(deleteButtons);
-        if (index < buttons.size()) {
-            return buttons.get(index).getText();
+        if (index < deleteButtons.size()) {
+            return deleteButtons.get(index).getText();
         }
         return "";
     }

@@ -4,12 +4,10 @@ import io.qameta.allure.Description;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
-import org.junit.jupiter.api.function.Executable;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AddRemoveElementsTest extends SetUpsForTests {
@@ -21,36 +19,37 @@ public class AddRemoveElementsTest extends SetUpsForTests {
         addRemoveElementsPage = new AddRemoveElementsPage(driver);
     }
 
-    @TestFactory
-    @Description("Динамические тесты для проверки добавления/удаления элементов")
-    Stream<DynamicTest> testAddRemoveElements() {
-        List<DynamicTest> dynamicTests = new ArrayList<>();
 
-        // Сценарии тестов
+    @TestFactory
+    @Description("Динамический тест для проверки добавления и удаления элементов")
+    Stream<DynamicTest> testAddRemoveElements() {
+        // Сценарии тестов: {количество добавлений, количество удалений}
         int[][] scenarios = new int[][]{{2, 1}, {5, 2}, {1, 3}};
 
-        for (int[] scenario : scenarios) {
+
+        return Stream.of(scenarios).map(scenario -> {
             int adds = scenario[0];
             int removes = scenario[1];
+            int expectedElements = adds - removes + addRemoveElementsPage.getNumberOfDeleteButtons();
 
-            String displayName = String.format("Добавление %d элементов и удаление %d элементов", adds, removes);
-            Executable exec = () -> {
-                for (int i = 0; i < adds; i++) {
-                    addRemoveElementsPage.addElement();
-                }
-                assertEquals(adds, addRemoveElementsPage.getNumberOfDeleteButtons(),
-                        "Количество добавленных элементов не соответствует ожидаемому");
+            return DynamicTest.dynamicTest("Добавление " + adds + " элементов и удаление " + removes,
+                    () -> {
+                        // Добавление элементов
+                        for (int i = 0; i < adds; i++) {
+                            addRemoveElementsPage.addElement();
+                        }
 
-                for (int i = 0; i < removes; i++) {
-                    addRemoveElementsPage.removeElement(0);
-                }
-                assertEquals(Math.max(adds - removes, 0), addRemoveElementsPage.getNumberOfDeleteButtons(),
-                        "Количество оставшихся элементов после удаления не соответствует ожидаемому");
-            };
+                        // Удаление элементов
+                        for (int i = 0; i < removes; i++) {
+                            addRemoveElementsPage.removeElement(0);
+                        }
 
-            dynamicTests.add(DynamicTest.dynamicTest(displayName, exec));
-        }
-
-        return dynamicTests.stream();
+                        // Проверка общего количества элементов
+                        assertAll("Проверка количества элементов после добавления и удаления",
+                                () -> assertEquals(expectedElements, addRemoveElementsPage.getNumberOfDeleteButtons(),
+                                        "Количество оставшихся элементов после добавления и удаления не соответствует ожидаемому")
+                        );
+                    });
+        });
     }
 }

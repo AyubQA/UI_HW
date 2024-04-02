@@ -1,13 +1,15 @@
 package Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 import java.util.List;
 
-public class AddRemoveElementsPage {
 
-    private WebDriver driver;
+public class AddRemoveElementsPage {
 
     @FindBy(xpath = "//button[text()='Add Element']")
     private WebElement addButton;
@@ -16,27 +18,25 @@ public class AddRemoveElementsPage {
     private List<WebElement> deleteButtons;
 
     public AddRemoveElementsPage(WebDriver driver) {
-        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
+    @Step("Добавление элемента")
     public void addElement() {
         addButton.click();
     }
 
+    @Step("Удаление элемента с индексом {index}")
     public void removeElement(int index) {
-        if (index < deleteButtons.size()) {
+        if (index >= 0 && index < deleteButtons.size()) {
             deleteButtons.get(index).click();
+        } else {
+            throw new IllegalArgumentException("Index out of bounds for delete buttons list: " + index);
         }
     }
 
+    @Step("Получение количества кнопок удаления")
     public int getNumberOfDeleteButtons() {
         return deleteButtons.size();
-    }
-
-    public String getTextOfDeleteButton(int index) {
-        if (index < deleteButtons.size()) {
-            return deleteButtons.get(index).getText();
-        }
-        return "";
     }
 }

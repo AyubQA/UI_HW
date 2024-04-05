@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c1e5ddc-0c8c-4df7-80d2-319919200e1d" name="Changes" comment="First">
+    <list default="true" id="6c1e5ddc-0c8c-4df7-80d2-319919200e1d" name="Changes" comment="HW N6">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ContextMenuTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DragAndDropTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/InfiniteScrollTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/KeyPressesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/ContextMenuPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/DragAndDropPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/InfiniteScrollPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/KeyPressesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AddRemoveElementsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AddRemoveElementsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/AddRemoveElementsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/AddRemoveElementsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/CheckboxesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/CheckboxesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/DisappearingElementsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/DisappearingElementsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/DropdownPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/DropdownPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/HoversPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/HoversPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/InputsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/InputsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/NotificationMessagePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/NotificationMessagePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/StatusCodesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/StatusCodesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StatusCodesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StatusCodesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,12 +105,23 @@
     "JUnit.AddRemoveElementsTest.testAddRemoveElements.executor": "Run",
     "JUnit.CheckboxesTest.executor": "Run",
     "JUnit.CheckboxesTest.testCheckboxes.executor": "Debug",
+    "JUnit.ContextMenuTest.executor": "Run",
+    "JUnit.ContextMenuTest.testContextMenu.executor": "Debug",
     "JUnit.DisappearingElementsTest.testDisappearingElements.executor": "Run",
+    "JUnit.DragAndDropTest.executor": "Debug",
+    "JUnit.DragAndDropTest.testDragAndDrop.executor": "Run",
     "JUnit.DropdownTest.executor": "Run",
     "JUnit.DropdownTest.testDropdown.executor": "Debug",
     "JUnit.HoversTest.testHovers.executor": "Run",
+    "JUnit.InfiniteScrollTest.executor": "Run",
+    "JUnit.InfiniteScrollTest.testInfiniteScroll.executor": "Run",
+    "JUnit.InfiniteScrollTest.testInfiniteScrollToText.executor": "Run",
+    "JUnit.KeyPressesTest.executor": "Run",
+    "JUnit.KeyPressesTest.testKeyPresses.executor": "Debug",
+    "JUnit.KeyPressesTest.testRandomKeyPresses.executor": "Run",
+    "JUnit.KeyPressesTest.testRandomKeyPressesAndSpecialKeys.executor": "Debug",
     "JUnit.NotificationMessageTest.testNotificationMessage.executor": "Run",
-    "JUnit.StatusCodesTest.executor": "Debug",
+    "JUnit.StatusCodesTest.executor": "Run",
     "JUnit.StatusCodesTest.testStatusCodes (1).executor": "Run",
     "JUnit.StatusCodesTest.testStatusCodes.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -156,51 +165,49 @@
       <recent name="C:\Users\Admin\AquaProjects\HWSelenium\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StatusCodesTest.testStatusCodes (1)">
-    <configuration name="AddRemoveElementsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ContextMenuTest">
+    <configuration name="ContextMenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HWSelenium" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AddRemoveElementsTest" />
+      <option name="MAIN_CLASS_NAME" value="ContextMenuTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddRemoveElementsTest.testAddAndRemoveElementsWithConsoleOutput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DragAndDropTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HWSelenium" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AddRemoveElementsTest" />
-      <option name="METHOD_NAME" value="testAddAndRemoveElementsWithConsoleOutput" />
+      <option name="MAIN_CLASS_NAME" value="DragAndDropTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InfiniteScrollTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HWSelenium" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InfiniteScrollTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InfiniteScrollTest.testInfiniteScrollToText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HWSelenium" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InfiniteScrollTest" />
+      <option name="METHOD_NAME" value="testInfiniteScrollToText" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddRemoveElementsTest.testAddRemoveElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KeyPressesTest.testKeyPresses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HWSelenium" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AddRemoveElementsTest" />
-      <option name="METHOD_NAME" value="testAddRemoveElements" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StatusCodesTest.testStatusCodes (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HWSelenium" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StatusCodesTest" />
-      <option name="METHOD_NAME" value="testStatusCodes(java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StatusCodesTest.testStatusCodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HWSelenium" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StatusCodesTest" />
-      <option name="METHOD_NAME" value="testStatusCodes" />
+      <option name="MAIN_CLASS_NAME" value="KeyPressesTest" />
+      <option name="METHOD_NAME" value="testKeyPresses" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -208,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StatusCodesTest.testStatusCodes (1)" />
-        <item itemvalue="JUnit.AddRemoveElementsTest.testAddRemoveElements" />
-        <item itemvalue="JUnit.StatusCodesTest.testStatusCodes" />
-        <item itemvalue="JUnit.AddRemoveElementsTest" />
-        <item itemvalue="JUnit.AddRemoveElementsTest.testAddAndRemoveElementsWithConsoleOutput" />
+        <item itemvalue="JUnit.ContextMenuTest" />
+        <item itemvalue="JUnit.DragAndDropTest" />
+        <item itemvalue="JUnit.InfiniteScrollTest" />
+        <item itemvalue="JUnit.InfiniteScrollTest.testInfiniteScrollToText" />
+        <item itemvalue="JUnit.KeyPressesTest.testKeyPresses" />
       </list>
     </recent_temporary>
   </component>
@@ -224,8 +231,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.17" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.17" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -243,8 +250,20 @@
       <workItem from="1711411971484" duration="434000" />
       <workItem from="1711955155962" duration="11674000" />
       <workItem from="1712044200196" duration="4374000" />
-      <workItem from="1712048604478" duration="10930000" />
+      <workItem from="1712048604478" duration="11358000" />
+      <workItem from="1712067017439" duration="3496000" />
+      <workItem from="1712133980977" duration="16960000" />
+      <workItem from="1712339433898" duration="8555000" />
     </task>
+    <task id="LOCAL-00001" summary="HW N6">
+      <option name="closed" value="true" />
+      <created>1712062915490</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712062915490</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,10 +281,15 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First" />
     <MESSAGE value="inifiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="inifiles" />
+    <MESSAGE value="HW N6" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW N6" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -274,6 +298,26 @@
           <url>file://$PROJECT_DIR$/src/test/java/DropdownTest.java</url>
           <line>20</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ContextMenuTest.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/KeyPressesTest.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/DragAndDropTest.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/DragAndDropTest.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,5 +1,6 @@
 package Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +13,7 @@ public class InfiniteScrollPage {
         this.driver = driver;
     }
 
+    @Step("Прокрутка страницы до текста: {text}")
     public void scrollToText(String text) {
         // Прокрутка страницы до появления текста
         boolean found = false;
@@ -28,6 +30,7 @@ public class InfiniteScrollPage {
         }
     }
 
+    @Step("Проверка видимости текста: {text}")
     public boolean isTextVisible(String text) {
         try {
             WebElement element = driver.findElement(By.xpath("//div[contains(text(), '" + text + "')]"));

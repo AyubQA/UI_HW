@@ -1,5 +1,6 @@
 package Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ public class DragAndDropPage {
         this.driver = driver;
     }
 
+    @Step("Перетаскивание элемента A на место элемента B")
     public void dragAtoB() {
         WebElement from = driver.findElement(columnA);
         WebElement to = driver.findElement(columnB);
@@ -25,10 +27,12 @@ public class DragAndDropPage {
                 .perform();
     }
 
+    @Step("Получение текста из колонки A")
     public String getColumnAText() {
         return driver.findElement(columnA).getText();
     }
 
+    @Step("Получение текста из колонки B")
     public String getColumnBText() {
         return driver.findElement(columnB).getText();
     }

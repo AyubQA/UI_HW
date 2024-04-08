@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c1e5ddc-0c8c-4df7-80d2-319919200e1d" name="Changes" comment="HW N6">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ContextMenuTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DragAndDropTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/InfiniteScrollTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/KeyPressesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/ContextMenuPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/DragAndDropPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/InfiniteScrollPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/KeyPressesPage.java" afterDir="false" />
+    <list default="true" id="6c1e5ddc-0c8c-4df7-80d2-319919200e1d" name="Changes" comment="Задание №7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AddRemoveElementsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AddRemoveElementsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CheckboxesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CheckboxesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ContextMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ContextMenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DisappearingElementsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DisappearingElementsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DropdownTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DropdownTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HoversTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HoversTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InputsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InputsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/KeyPressesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/KeyPressesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/NotificationMessageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/NotificationMessageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/InputsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/InputsPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,9 +106,10 @@
     "JUnit.AddRemoveElementsTest.testAddAndRemoveElementsWithConsoleOutput.executor": "Run",
     "JUnit.AddRemoveElementsTest.testAddRemoveElements.executor": "Run",
     "JUnit.CheckboxesTest.executor": "Run",
-    "JUnit.CheckboxesTest.testCheckboxes.executor": "Debug",
+    "JUnit.CheckboxesTest.testCheckboxes.executor": "Run",
     "JUnit.ContextMenuTest.executor": "Run",
     "JUnit.ContextMenuTest.testContextMenu.executor": "Debug",
+    "JUnit.DisappearingElementsTest.executor": "Run",
     "JUnit.DisappearingElementsTest.testDisappearingElements.executor": "Run",
     "JUnit.DragAndDropTest.executor": "Debug",
     "JUnit.DragAndDropTest.testDragAndDrop.executor": "Run",
@@ -116,14 +119,22 @@
     "JUnit.InfiniteScrollTest.executor": "Run",
     "JUnit.InfiniteScrollTest.testInfiniteScroll.executor": "Run",
     "JUnit.InfiniteScrollTest.testInfiniteScrollToText.executor": "Run",
+    "JUnit.InputsTest.executor": "Run",
+    "JUnit.InputsTest.testInputs.executor": "Run",
+    "JUnit.InputsTest.testNegativeCases.executor": "Run",
     "JUnit.KeyPressesTest.executor": "Run",
-    "JUnit.KeyPressesTest.testKeyPresses.executor": "Debug",
+    "JUnit.KeyPressesTest.testKeyPresses.executor": "Run",
     "JUnit.KeyPressesTest.testRandomKeyPresses.executor": "Run",
     "JUnit.KeyPressesTest.testRandomKeyPressesAndSpecialKeys.executor": "Debug",
-    "JUnit.NotificationMessageTest.testNotificationMessage.executor": "Run",
+    "JUnit.NotificationMessageTest.executor": "Run",
+    "JUnit.NotificationMessageTest.testNotificationMessage.executor": "Debug",
     "JUnit.StatusCodesTest.executor": "Run",
     "JUnit.StatusCodesTest.testStatusCodes (1).executor": "Run",
     "JUnit.StatusCodesTest.testStatusCodes.executor": "Run",
+    "Maven.HWSelenium [io.qameta.allure:allure-maven:2.12.0:install].executor": "Run",
+    "Maven.HWSelenium [io.qameta.allure:allure-maven:2.12.0:serve].executor": "Run",
+    "Maven.HWSelenium [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
+    "Maven.HWSelenium [test].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -154,7 +165,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.editor",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.archetype.catalogs",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -165,40 +176,22 @@
       <recent name="C:\Users\Admin\AquaProjects\HWSelenium\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContextMenuTest">
-    <configuration name="ContextMenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StatusCodesTest.testStatusCodes">
+    <configuration name="CheckboxesTest.testCheckboxes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HWSelenium" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ContextMenuTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DragAndDropTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HWSelenium" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DragAndDropTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InfiniteScrollTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HWSelenium" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InfiniteScrollTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InfiniteScrollTest.testInfiniteScrollToText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HWSelenium" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InfiniteScrollTest" />
-      <option name="METHOD_NAME" value="testInfiniteScrollToText" />
+      <option name="MAIN_CLASS_NAME" value="CheckboxesTest" />
+      <option name="METHOD_NAME" value="testCheckboxes(int)" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DropdownTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HWSelenium" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DropdownTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -213,20 +206,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NotificationMessageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HWSelenium" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NotificationMessageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatusCodesTest.testStatusCodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HWSelenium" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StatusCodesTest" />
+      <option name="METHOD_NAME" value="testStatusCodes(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ContextMenuTest" />
-        <item itemvalue="JUnit.DragAndDropTest" />
-        <item itemvalue="JUnit.InfiniteScrollTest" />
-        <item itemvalue="JUnit.InfiniteScrollTest.testInfiniteScrollToText" />
+        <item itemvalue="JUnit.StatusCodesTest.testStatusCodes" />
+        <item itemvalue="JUnit.NotificationMessageTest" />
         <item itemvalue="JUnit.KeyPressesTest.testKeyPresses" />
+        <item itemvalue="JUnit.DropdownTest" />
+        <item itemvalue="JUnit.CheckboxesTest.testCheckboxes" />
       </list>
     </recent_temporary>
   </component>
   <component name="SeleniumInternalSettingsState">
     <option name="lastFrameworkName" value="FluentLenium" />
     <option name="lastLanguageId" value="JAVA" />
-    <option name="lastUrl" value="https://the-internet.herokuapp.com/add_remove_elements/" />
+    <option name="lastUrl" value="https://the-internet.herokuapp.com/notification_message_rendered" />
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -253,7 +265,9 @@
       <workItem from="1712048604478" duration="11358000" />
       <workItem from="1712067017439" duration="3496000" />
       <workItem from="1712133980977" duration="16960000" />
-      <workItem from="1712339433898" duration="8555000" />
+      <workItem from="1712339433898" duration="9980000" />
+      <workItem from="1712396121563" duration="3582000" />
+      <workItem from="1712553621594" duration="7651000" />
     </task>
     <task id="LOCAL-00001" summary="HW N6">
       <option name="closed" value="true" />
@@ -263,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712062915490</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Задание №7">
+      <option name="closed" value="true" />
+      <created>1712348537372</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712348537372</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,40 +308,10 @@
     <MESSAGE value="First" />
     <MESSAGE value="inifiles" />
     <MESSAGE value="HW N6" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW N6" />
+    <MESSAGE value="Задание №7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задание №7" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/DropdownTest.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/ContextMenuTest.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/KeyPressesTest.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/DragAndDropTest.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/DragAndDropTest.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

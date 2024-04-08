@@ -16,7 +16,7 @@ public class KeyPressesTest extends SetUpsForTests {
             char randomChar = keyPressesPage.generateRandomLatinCharacter();
             keyPressesPage.pressKey(String.valueOf(randomChar));
             Assertions.assertThat(keyPressesPage.getResultText())
-                    .as("Текст результата должен соответствовать ожидаемому выводу для символа: %s", randomChar)
+                    .as(String.format("Текст результата должен соответствовать ожидаемому выводу для символа: %s", randomChar))
                     .containsIgnoringCase("You entered: " + randomChar);
         }
 
@@ -26,7 +26,7 @@ public class KeyPressesTest extends SetUpsForTests {
         for (int i = 0; i < specialKeys.length; i++) {
             keyPressesPage.pressKey(specialKeys[i]);
             Assertions.assertThat(keyPressesPage.getResultText())
-                    .as("Текст результата должен соответствовать ожидаемому выводу для специальной клавиши: %s", specialKeyNames[i])
+                    .as(String.format("Текст результата должен соответствовать ожидаемому выводу для специальной клавиши: %s", specialKeyNames[i]))
                     .contains("You entered: " + specialKeyNames[i]);
         }
     }

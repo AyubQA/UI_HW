@@ -20,6 +20,13 @@ public class InputsPage {
         input.sendKeys(String.valueOf(number));
     }
 
+    @Step("Ввод текста {text} в поле ввода")
+    public void enterText(String text) {
+        WebElement input = driver.findElement(inputField);
+        input.clear();
+        input.sendKeys(text);
+    }
+
     @Step("Получение значения из поля ввода")
     public String getInputValue() {
         return driver.findElement(inputField).getAttribute("value");

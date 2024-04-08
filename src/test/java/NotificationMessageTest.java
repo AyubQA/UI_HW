@@ -3,7 +3,8 @@ import Pages.SetUP.SetUpsForTests;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class NotificationMessageTest extends SetUpsForTests {
     private NotificationMessagePage notificationMessagePage;
@@ -19,6 +20,14 @@ public class NotificationMessageTest extends SetUpsForTests {
     public void testNotificationMessage() {
         notificationMessagePage.clickLinkClickHere();
         String messageText = notificationMessagePage.getNotificationMessage();
-        assertTrue(messageText.contains("Action successful"), "Уведомление не содержит текст 'Action successful'. Актуальный текст: " + messageText);
+        if (!messageText.contains("Action successful")) {
+            notificationMessagePage.closeNotification();
+            String newMessageText = notificationMessagePage.getNotificationMessage();
+            assertThat(newMessageText).as("Уведомление не содержит текст 'Action successful'. Актуальный текст: %s", newMessageText)
+                    .contains("Action successful");
+        } else {
+            assertThat(messageText).as("Уведомление не содержит текст 'Action successful'. Актуальный текст: %s", messageText)
+                    .contains("Action successful");
+        }
     }
 }

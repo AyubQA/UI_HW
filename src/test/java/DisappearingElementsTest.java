@@ -8,8 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class DisappearingElementsTest extends SetUpsForTests {
     private DisappearingElementsPage disappearingElementsPage;
@@ -25,16 +24,14 @@ public class DisappearingElementsTest extends SetUpsForTests {
     public void testDisappearingElements(TestInfo testInfo) {
         System.out.println("Попытка номер: " + testInfo.getDisplayName());
         List<WebElement> elements = disappearingElementsPage.getElements();
-        // Проверяем, что на странице 5 элементов
-        assertEquals(5, elements.size(), "Количество элементов на странице не соответствует ожидаемому");
 
-        boolean found = elements.stream().anyMatch(element -> element.getText().equals("Gallery"));
-        assertTrue(found, "Элемент 'Gallery' не найден");
+        // Используем AssertJ для проверки количества элементов
+        assertThat(elements).as("Количество элементов на странице не соответствует ожидаемому")
+                .hasSize(5);
 
-        if (!found) {
-            disappearingElementsPage.refreshPage();
-        } else {
-            System.out.println("Элемент 'Gallery' успешно найден.");
-        }
+        // Используем AssertJ для проверки наличия элемента 'Gallery'
+        assertThat(elements.stream().anyMatch(element -> element.getText().equals("Gallery")))
+                .as("Элемент 'Gallery' не найден")
+                .isTrue();
     }
 }

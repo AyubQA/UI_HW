@@ -4,12 +4,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CheckboxesTest extends SetUpsForTests {
     private CheckboxesPage checkboxesPage;
+
     @BeforeEach
     public void setUp() {
         driver.get("https://the-internet.herokuapp.com/checkboxes");
@@ -27,9 +26,13 @@ public class CheckboxesTest extends SetUpsForTests {
 
         // Проверяем, что состояние чекбокса изменилось
         if (initialState) {
-            assertFalse(checkboxesPage.isCheckboxSelected(index), "Чекбокс с индексом " + index + " должен был быть снят, но остался выбранным.");
+            assertThat(checkboxesPage.isCheckboxSelected(index))
+                    .as("Чекбокс с индексом " + index + " должен был быть снят, но остался выбранным.")
+                    .isFalse();
         } else {
-            assertTrue(checkboxesPage.isCheckboxSelected(index), "Чекбокс с индексом " + index + " должен был быть выбран, но остался не выбранным.");
+            assertThat(checkboxesPage.isCheckboxSelected(index))
+                    .as("Чекбокс с индексом " + index + " должен был быть выбран, но остался не выбранным.")
+                    .isTrue();
         }
     }
 }

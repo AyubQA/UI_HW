@@ -6,7 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.jupiter.api.Assertions;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(AllureJunit5.class)
 public class HoversTest extends SetUpsForTests {
@@ -25,7 +26,8 @@ public class HoversTest extends SetUpsForTests {
         String expectedCaption = "name: user" + figureIndex;
         hoversPage.hoverOverFigure(figureIndex);
         String actualCaption = hoversPage.getFigureCaption(figureIndex);
-        Assertions.assertTrue(actualCaption.contains(expectedCaption),
-                "Текст при наведении на фигуру " + figureIndex + " не соответствует ожидаемому. Ожидаемый текст: " + expectedCaption + ". Фактический текст: " + actualCaption);
+
+        assertThat(actualCaption).as("Текст при наведении на фигуру " + figureIndex + " не соответствует ожидаемому. Ожидаемый текст: " + expectedCaption)
+                .contains(expectedCaption);
     }
 }

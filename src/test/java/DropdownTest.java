@@ -3,7 +3,8 @@ import Pages.SetUP.SetUpsForTests;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class DropdownTest extends SetUpsForTests {
     private DropdownPage dropdownPage;
@@ -17,18 +18,16 @@ public class DropdownTest extends SetUpsForTests {
     @Test
     @Description("Проверка выпадающего списка")
     public void testDropdown() {
-
         dropdownPage.selectOptionByIndex(1);
         String selectedOptionText1 = dropdownPage.getSelectedOptionText();
         System.out.println("Текущий текст элемента dropdown: " + selectedOptionText1);
         // Проверяем, что текст выбранной опции соответствует ожидаемому
-        assertEquals("Option 1", selectedOptionText1, "Выбранная опция не соответствует 'Option 1'");
-
+        assertThat(selectedOptionText1).as("Выбранная опция не соответствует 'Option 1'").isEqualTo("Option 1");
 
         dropdownPage.selectOptionByIndex(2);
         String selectedOptionText2 = dropdownPage.getSelectedOptionText();
         System.out.println("Текущий текст элемента dropdown: " + selectedOptionText2);
         // Проверяем, что текст выбранной опции соответствует ожидаемому
-        assertEquals("Option 2", selectedOptionText2, "Выбранная опция не соответствует 'Option 2'");
+        assertThat(selectedOptionText2).as("Выбранная опция не соответствует 'Option 2'").isEqualTo("Option 2");
     }
 }

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class StatusCodesTest extends SetUpsForTests {
     private StatusCodesPage statusCodesPage;
@@ -22,7 +22,8 @@ public class StatusCodesTest extends SetUpsForTests {
     public void testStatusCodes(String statusCode) {
         statusCodesPage.clickStatusCodeLink(statusCode);
         String pageTitle = statusCodesPage.getBodyText();
-        assertTrue(pageTitle.contains(statusCode), "Заголовок страницы не содержит ожидаемый статус: " + statusCode);
+        assertThat(pageTitle).as("Заголовок страницы не содержит ожидаемый статус: %s", statusCode)
+                .contains(statusCode);
         System.out.println("Текст после перехода на страницу статуса " + statusCode + ": " + statusCodesPage.getBodyText());
         driver.navigate().back();
     }
